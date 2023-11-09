@@ -1,26 +1,21 @@
 import { useState } from "react";
+import { imagesMachines } from "../data/imagesMachines";
 
 export const CardMachines = () => {
   const [slide, setSlide] = useState(0);
-
-  const images = [
-    { url: "img/machines/primary.png" },
-    { url: "img/machines/secondary.png" },
-    { url: "img/machines/third.png" },
-  ];
 
   return (
     <div className="flex flex-col gap-y-4 items-center max-w-[330px]">
       <div className="w-[330px] h-[330px] rounded-[20px] md:hover:scale-[1.02]">
         <img
           className="w-full object-cover rounded-[20px]"
-          src={images[slide].url}
+          src={imagesMachines[slide].url}
           alt="primary"
         />
       </div>
 
       <ul className="flex gap-x-[16px] mb-[15px]">
-        {images.map((image, index) => (
+        {imagesMachines.map((image, index) => (
           <li
             key={index}
             onClick={() => setSlide(index)}

@@ -40,15 +40,9 @@ export default {
       secondary: "#3B3B3B",
       caption: '#858584',
       action: "#A259FF",
+      whiteBlur: 'rgba(252, 251, 251, 0.1)',
     },
-    extend: {
-      keyframes: {
-        wiggle: {
-          '0%': { transform: 'scale(1) translateY(0)', transformOrigin: '50% 16%' },
-          '100%': { transform: 'scale(1.25) translateY(-15px)', transformOrigin: 'top' },
-        }
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };

@@ -49,14 +49,15 @@ export const SectionHero = () => {
 
           <div
             className="flex flex-col justify-end w-full min-h-[330px] max-w-[330px] md:row-start-1 md:row-end-3 md:max-w-[330px] md:max-h-[330px]
-          bg-[url('img/hero1.png')] bg-[center_bottom_50px] bg-cover bg-no-repeat rounded-[20px] xl:max-w-[510px] xl:max-h-[510px]"
+          bg-[url('/img/hero1.png')] bg-[center_bottom_50px] bg-cover bg-no-repeat rounded-[20px] xl:max-w-[510px] xl:max-h-[510px]"
           >
             <div className="flex flex-col gap-y-[10px] px-5 py-[22px] bg-secondary rounded-b-[20px]">
               <h1 className="font-[WorkSansBold] font-bold text-[22px] leading-[140%]">
                 Space Walking
               </h1>
               <div className="flex gap-x-3">
-                <img src="img/avatars/heroAvatar.png" alt="heroAvatar" /> Animakid
+                <img src="img/avatars/heroAvatar.png" alt="heroAvatar" />{" "}
+                Animakid
               </div>
             </div>
           </div>

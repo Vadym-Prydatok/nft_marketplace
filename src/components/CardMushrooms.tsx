@@ -1,26 +1,21 @@
 import { useState } from "react";
+import { imagesMushrooms } from "../data/imagesMushrooms";
 
 export const CardMushrooms = () => {
   const [slide, setSlide] = useState(0);
-
-  const images = [
-    { url: "img/mushrooms/primary.png" },
-    { url: "img/mushrooms/secondary.png" },
-    { url: "img/mushrooms/third.png" },
-  ];
 
   return (
     <div className="flex flex-col gap-y-4 items-center max-w-[330px]">
       <div className="w-[330px] h-[330px] rounded-[20px] md:hover:scale-[1.02]">
         <img
           className="w-full object-cover rounded-[20px]"
-          src={images[slide].url}
+          src={imagesMushrooms[slide].url}
           alt="primary"
         />
       </div>
 
       <ul className="flex gap-x-[16px] mb-[15px]">
-        {images.map((image, index) => (
+        {imagesMushrooms.map((image, index) => (
           <li
             key={index}
             onClick={() => setSlide(index)}

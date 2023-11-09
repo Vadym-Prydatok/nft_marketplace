@@ -1,12 +1,14 @@
 import { useEffect } from "react";
 import { creators } from "../data/creators";
 import { Creator } from "./Creator";
-import AOS from "aos/dist/aos.js";
+// import AOS from "aos/dist/aos.js";
 import "aos/dist/aos.css";
+import Aos from "aos";
 
 export const TopCreators = () => {
     useEffect(() => {
-    AOS.init();
+    Aos.init();
+
   }, []);
   
   return (

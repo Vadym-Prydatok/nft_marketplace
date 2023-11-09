@@ -47,6 +47,10 @@
   }
 }
 
+.violetGradient {
+  background: linear-gradient(0deg, rgba(162,89,255,1) 0%, rgba(162,89,255,0) 100%);
+}
+
 .menu-btn {
 	width: 24px;
 	height: 24px;

@@ -40,9 +40,12 @@ export default {
       secondary: "#3B3B3B",
       caption: '#858584',
       action: "#A259FF",
+      white: "#fff",
       whiteBlur: 'rgba(252, 251, 251, 0.1)',
+      darkBlur: 'rgba(59, 59, 59, 0.5)',
     },
-    extend: {},
+    extend: {
+    },
   },
   plugins: [],
 };

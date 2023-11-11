@@ -78,7 +78,7 @@ export const Collection = () => {
   };
 
   return (
-    <section className="py-10 md:py-20">
+    <section className="py-10 md:py-20" id="collection">
       <div className="container">
         <div className="flex flex-col items-center">
           <div className="mb-10 self-start">

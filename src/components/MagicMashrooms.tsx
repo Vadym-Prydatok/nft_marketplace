@@ -1,6 +1,8 @@
+import classNames from "classnames";
 import { useEffect, useState } from "react";
 
 export const MagicMashrooms = () => {
+  const isIphone = (navigator.userAgent.match(/(iPad|iPhone|iPod|Silk)/gi));
   const [timeLeft, setTimeLeft] = useState({
     hours: 0,
     minutes: 0,
@@ -9,11 +11,12 @@ export const MagicMashrooms = () => {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const now = new Date().getTime(); // Поточний час в мілісекундах
+      const now = new Date().getTime();
       const endOfDay = new Date();
-      endOfDay.setHours(23, 59, 59, 999); // Кінець поточного дня (23:59:59)
+      endOfDay.setHours(23, 59, 59, 999);
 
-      const timeRemaining = endOfDay.getTime() - now; // Різниця у мілісекундах
+      const timeRemaining = endOfDay.getTime() - now;
+
       const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
       const seconds = Math.floor((timeRemaining / 1000) % 60);
@@ -21,17 +24,17 @@ export const MagicMashrooms = () => {
       setTimeLeft({ hours, minutes, seconds });
     };
 
-    const timer = setInterval(calculateTimeLeft, 1000); // Оновлюємо таймер кожну секунду
+    const timer = setInterval(calculateTimeLeft, 1000);
 
     return () => {
-      clearInterval(timer); // Прибираємо таймер при знищенні компонента
+      clearInterval(timer);
     };
   }, []);
 
   return (
     <section className="py-10 md:py-20">
       <div>
-        <div className="w-full h-[600px] md:h-[640px] bg-[url(/img/bottomBG.png)] bg-cover bg-center bg-fixed">
+        <div className={classNames('w-full h-[600px] md:h-[640px] bg-[url(/img/bottomBG.png)] bg-cover bg-center bg-no-repeat', {'bg-fixed': !isIphone})}>
           <div className="violetGradient w-full h-full">
             <div className="container">
               <div
@@ -68,7 +71,7 @@ export const MagicMashrooms = () => {
                   <div>
                     <ul className="flex gap-x-[10px] font-bold font-[SpaceMonoBold] text-[38px] leading-[120%]">
                       <li>
-                        {timeLeft.hours}{" "}
+                        {timeLeft.hours}
                         <p className="font-[SpaceMonoRegular] font-normal text-[12px] leading-[110%] mt-[5px]">
                           Hours
                         </p>

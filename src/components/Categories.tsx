@@ -14,13 +14,13 @@ export const Categories = () => {
           <ul className="grid grid-rows-4 grid-cols-2 gap-5 md:grid-rows-2 md:grid-cols-4 md:gap-[30px]">
             {categories.map((category) => (
               <li key={category.id} className="w-full grid place-items-center">
-                <a href="https://www.thetadrop.com/marketplace" target="_blank" className="w-full max-w-[172px] h-[210px] rounded-[20px] relative group xl:h-[316px] xl:max-w-[242px]">
+                <a href="#" target="_blank" className="w-full max-w-[172px] h-[210px] rounded-[20px] relative group xl:h-[316px] xl:max-w-[242px]">
                   <div
                     className={`h-[142px] w-full grid place-items-center rounded-t-[20px] xl:h-60 bg-cover ${category.bgImgUrl}`}
                   >
                     <div className="backdrop-blur-[9px] bg-whiteBlur w-[100%] h-[100%] rounded-t-[20px] group-hover:backdrop-blur-0"></div>
                     <img
-                      className="w-20 h-20 xl:w-[100px] xl:h-[100px] absolute group-hover:hidden"
+                      className="w-20 h-20 xl:w-[100px] xl:h-[100px] absolute group-hover:hidden translate-x-[-50%] translate-y-[-50%] left-1/2 top-1/3"
                       src={category.imgUrl}
                       alt="category"
                     />

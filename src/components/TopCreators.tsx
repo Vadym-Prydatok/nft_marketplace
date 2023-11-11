@@ -12,7 +12,7 @@ export const TopCreators = () => {
   }, []);
   
   return (
-    <section className="py-10 md:py-20">
+    <section className="py-10 md:py-20" id="rankings">
       <div className="container">
         <div
           className="grid grid-rows-[repeat(3,_minmax(auto,_auto))] gap-y-10 xl:gap-y-[60px]

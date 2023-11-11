@@ -36,6 +36,9 @@
   *{
     transition: all 0.3s ease-in-out;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     font-family: 'WorkSansRegular', sans-serif;
     font-weight: 400;
@@ -88,4 +91,8 @@
 .menu-btn.active span:nth-of-type(3) {
   top: 50%;
   transform: translate(-50%, 0%) rotate(-45deg); 
+}
+
+input {
+  -webkit-appearance: none;
 }

@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 interface DiscoverCardProps {
-  bg: string;
+  imgUrl: string;
   avaUrl: string;
   title: string;
   userName: string;
@@ -9,10 +9,12 @@ interface DiscoverCardProps {
   bid: string;
 }
 
-export const DiscoverCard:FC<DiscoverCardProps> = ({ bg, avaUrl, title, userName, price, bid }) => {
+export const DiscoverCard:FC<DiscoverCardProps> = ({ imgUrl, avaUrl, title, userName, price, bid }) => {
   return (
-    <a href="https://www.thetadrop.com/drops" target="_blank">
-      <div className={`min-h-[238px] md:min-h-[296px] ${bg} bg-cover bg-center bg-no-repeat rounded-t-[20px]`}></div>
+    <a className="group" href="#" target="_blank">
+      <div className='min-h-[238px] md:min-h-[296px] rounded-t-[20px] overflow-hidden'>
+        <img className="object-cover group-hover:scale-105" src={imgUrl} alt="" />
+      </div>
       <div className="p-5 bg-secondary rounded-b-[20px]">
         <div className="flex flex-col gap-y-[25px]">
           <div className="flex flex-col gap-y-[5px]">

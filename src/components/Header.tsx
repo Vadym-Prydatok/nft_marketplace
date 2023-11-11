@@ -13,7 +13,7 @@ export const Header = () => {
             <div>
               <a
                 href="#"
-                className="flex items-center gap-3 font-[SpaceMonoBold] hover:text-action"
+                className="flex items-center gap-3 font-[SpaceMonoBold] font-bold hover:text-action text-[22px]"
               >
                 <img src="img/svg/logo.svg" alt="logo" />
                 <span>NFT Marketplace</span>
@@ -22,13 +22,13 @@ export const Header = () => {
             <Menu hasMenu={isMenuOpen} />
             <ul className="hidden xl:flex gap-[60px] items-center">
               <li className="hover:text-action">
-                <a href="/">Marketplace</a>
+                <a href="#collection">Marketplace</a>
               </li>
               <li className="hover:text-action">
-                <a href="/">Rankings</a>
+                <a href="#rankings">Rankings</a>
               </li>
               <li className="hover:text-action">
-                <a href="/">Connect a wallet</a>
+                <a href="#wallet">Connect a wallet</a>
               </li>
               <li>
                 <button className="rounded-[20px] bg-action w-[152px] h-[60px] border-action border-2 hover:bg-main flex items-center justify-center gap-3">

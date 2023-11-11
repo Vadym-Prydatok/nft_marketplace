@@ -5,6 +5,9 @@ import { SectionHero } from "./components/SectionHero";
 import { Categories } from "./components/Categories";
 import { Discover } from "./components/Discover";
 import { MagicMashrooms } from "./components/MagicMashrooms";
+import { HowItWorks } from "./components/HowItWorks";
+import { JoinUs } from "./components/JoinUs";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -16,14 +19,9 @@ function App() {
       <Categories />
       <Discover />
       <MagicMashrooms />
-
-      <section className="py-10 md:py-20">
-        <div className="container">
-          <div>
-            <div className="w-full h-[1140px] bg-cover bg-center"></div>
-          </div>
-        </div>
-      </section>
+      <HowItWorks />
+      <JoinUs />
+      <Footer />
     </div>
   );
 }

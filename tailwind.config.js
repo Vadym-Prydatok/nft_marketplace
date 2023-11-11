@@ -7,14 +7,6 @@ export default {
   theme: {
     fontFamily: {},
 
-    // screens: {
-    //   xs: '384px',
-    //   sm: '640px',
-    //   md: '834px',
-    //   lg: '1024px',
-    //   xl: '1280px',
-    // },
-
     boxShadow: {
       md: '0px 3px 22px 1px #A259FF',
     },
@@ -41,6 +33,7 @@ export default {
       caption: '#858584',
       action: "#A259FF",
       white: "#fff",
+      label: '#CCCCCC',
       whiteBlur: 'rgba(252, 251, 251, 0.1)',
       darkBlur: 'rgba(59, 59, 59, 0.5)',
     },

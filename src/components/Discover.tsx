@@ -29,7 +29,7 @@ export const Discover = () => {
             <ul className="w-full grid justify-items-center gap-y-5 md:grid-cols-2 xl:grid-cols-3">
               <li className="h-100% min-w-[330px] hover:shadow-md rounded-[20px] xl:justify-self-start">
                 <DiscoverCard
-                  bg="bg-[url(/img/discover/galaxy.png)]"
+                  imgUrl="img/discover/galaxy.png"
                   avaUrl="img/discover/moonAvatar.png"
                   title="Distant Galaxy"
                   userName="MoonDancer"
@@ -40,7 +40,7 @@ export const Discover = () => {
 
               <li className="h-100% min-w-[330px] hover:shadow-md rounded-[20px]">
                 <DiscoverCard
-                  bg="bg-[url(/img/discover/edena.png)]"
+                  imgUrl="img/discover/edena.png"
                   avaUrl="img/discover/nebulaAvatar.png"
                   title="Life On Edena"
                   userName="NebulaKid"
@@ -51,7 +51,7 @@ export const Discover = () => {
 
               <li className="h-100% min-w-[330px] hover:shadow-md rounded-[20px] md:hidden xl:block xl:justify-self-end">
                 <DiscoverCard
-                  bg="bg-[url(/img/discover/astro.png)]"
+                  imgUrl="img/discover/astro.png"
                   avaUrl="img/discover/spaceAvatar.png"
                   title="AstroFiction"
                   userName="Spaceone"

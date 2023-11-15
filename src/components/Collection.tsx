@@ -1,24 +1,51 @@
-// import AOS from "aos";
-// import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import { CardAnimals } from "./CardAnimals";
 import { CardMushrooms } from "./CardMushrooms";
 import classNames from "classnames";
 import { CardMachines } from "./CardMachines";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 export const Collection = () => {
   const [card, setCard] = useState(0);
   const [timer, setTimer] = useState(true);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
   const [hasControlButton, setControlButton] = useState(false);
+  gsap.registerPlugin(ScrollTrigger);
 
-  // useEffect(() => {
-  //   AOS.init();
-  // }, []);
+  useEffect(() => {
+    gsap.fromTo(
+      "#collection ul li",
+      {
+        opacity: 0,
+        y: -50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.5,
+        stagger: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#collection",
+          start: "top 80%",
+        },
+      },
+    );
 
-  // useEffect(() => {
-  //   AOS.refresh();
-  // }, [card]);
+    gsap.fromTo(
+      ".logo",
+      { opacity: 0, y: -50 },
+      { opacity: 1, y: 0, duration: 1, delay: 0.5, ease: "power2.out" },
+    );
+    gsap.fromTo(
+      ".menu-btn",
+      { opacity: 0, y: -50 },
+      { opacity: 1, y: 0, duration: 1, delay: 0.7, ease: "power2.out" },
+    );
+  }, []);
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,6 +61,12 @@ export const Collection = () => {
   useEffect(() => {
     if (windowSize < 834 && timer) {
       const interval = setInterval(() => {
+        gsap.fromTo(
+          "#collection ul li",
+          { opacity: 0 },
+          { opacity: 1, duration: 1 }
+        );
+
         setCard((prev) => {
           if (prev === 2) {
             return 0;
@@ -48,6 +81,12 @@ export const Collection = () => {
   }, [windowSize, timer]);
 
   const nextCard = () => {
+    gsap.fromTo(
+      "#collection ul li",
+      { opacity: 0 },
+      { opacity: 1, duration: 1 }
+    );
+
     setCard((prev) => {
       if (prev === 2) {
         return 0;
@@ -58,6 +97,12 @@ export const Collection = () => {
   };
 
   const prevCard = () => {
+    gsap.fromTo(
+      "#collection ul li",
+      { opacity: 0 },
+      { opacity: 1, duration: 1 }
+    );
+
     setCard((prev) => {
       if (prev === 0) {
         return 2;
@@ -78,10 +123,12 @@ export const Collection = () => {
   };
 
   return (
-    <section className="py-10 md:py-20" id="collection">
+    <section className="py-10 md:py-20" id="collection"
+    >
       <div className="container">
         <div className="flex flex-col items-center">
-          <div className="mb-10 self-start">
+          <div className="mb-10 self-start text-box"
+           >
             <h1 className="font-[WorkSansSemiBold] text-[28px] font-semibold xl:text-[38px] xl:leading-[120%] mb-[10px]">
               Trending Collection
             </h1>
@@ -91,7 +138,7 @@ export const Collection = () => {
           </div>
 
           <ul
-            className="relative flex gap-x-[30px] md:justify-evenly md:w-full xl:justify-between"
+            className="relative flex gap-x-[30px] md:justify-evenly md:w-full xl:justify-between cards-list"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >

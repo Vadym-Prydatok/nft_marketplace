@@ -8,15 +8,13 @@ interface props {
 export const Creator: FC<props> = ({ creator }) => {
   return (
     <a
-      href="https://www.thetadrop.com/marketplace/top-sales"
-      target="blank"
       className="relative flex items-center p-5 w-full gap-x-5 bg-secondary rounded-[20px] xl:flex-col xl:gap-y-[20px] group"
     >
-      <span className="font-[SpaceMonoRegular] font-normal absolute left-3 top-[12px] p-[3px] text-center bg-main text-caption h-[30px] w-[30px] rounded-[50%]">
+      <span className="font-[SpaceMonoRegular] font-normal absolute left-3 top-[12px] p-[3px] text-center bg-main text-caption h-[30px] w-[30px] rounded-[50%] z-10 rate-span">
         {creator.rate}
       </span>
       <div className="w-[60px] h-[60px] xl:w-[120px] xl:h-[120px]">
-        <img className="group-hover:scale-105" src={creator.imgUrl} alt="artistAvatar" />
+        <img className="group-hover:scale-105 duration-1000" src={creator.imgUrl} alt="artistAvatar" />
       </div>
 
       <div>

@@ -1,14 +1,24 @@
 import { useState } from "react";
 import { imagesAnimals } from "../data/imagesAnimals";
+import gsap from "gsap";
 
 export const CardAnimals = () => {
   const [slide, setSlide] = useState(0);
 
+  const handleClick = (index: number) => {
+    setSlide(index);
+    gsap.fromTo(
+      ".fade-box",
+      { opacity: 0, y: 10 },
+      { opacity: 1, y: 0, duration: 1 },
+    );
+  };
+
   return (
     <div className="flex flex-col gap-y-4 items-center max-w-[330px]">
-      <div className="w-[330px] h-[330px] rounded-[20px] overflow-hidden">
+      <div className="w-[330px] h-[330px] rounded-[20px] overflow-hidden fade-box">
         <img
-          className="w-full object-cover hover:scale-105 rounded-[20px]"
+          className="w-full object-cover hover:scale-105 duration-1000 rounded-[20px]"
           src={imagesAnimals[slide].url}
           alt="primary"
         />
@@ -18,8 +28,8 @@ export const CardAnimals = () => {
         {imagesAnimals.map((image, index) => (
           <li
             key={index}
-            onClick={() => setSlide(index)}
-            className={`h-[96px] w-[96px] rounded-[20px] cursor-pointer hover:shadow-md md:h-[100px] md:w-[100px] ${
+            onClick={() => handleClick(index)}
+            className={`h-[96px] w-[96px] rounded-[20px] cursor-pointer hover:shadow-md duration-300 transition-shadow md:h-[100px] md:w-[100px] ${
               slide === index ? "border-2" : "border-none"
             }`}
           >
@@ -32,7 +42,7 @@ export const CardAnimals = () => {
         <h1 className="font-[WorkSansSemiBold] font-semibold text-[22px]">
           DSGN Animals
         </h1>
-        <a className="flex gap-x-3 hover:text-action" href="/">
+        <a className="flex gap-x-3 hover:text-action duration-300 transition-colors" href="#">
           <img src="img/avatars/foxAvatar.png" alt="foxAvatar" />
           MrFox
         </a>

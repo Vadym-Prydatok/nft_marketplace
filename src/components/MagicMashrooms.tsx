@@ -32,7 +32,7 @@ export const MagicMashrooms = () => {
   }, []);
 
   return (
-    <section className="py-10 md:py-20">
+    <section className="py-10 md:py-20 xxxx">
       <div>
         <div className={classNames('w-full h-[600px] md:h-[640px] bg-[url(/img/bottomBG.png)] bg-cover bg-center bg-no-repeat', {'bg-fixed': !isIphone})}>
           <div className="violetGradient w-full h-full">
@@ -56,7 +56,7 @@ export const MagicMashrooms = () => {
                 </div>
 
                 <div className="md:row-start-3 md:col-start-1 rounded-[20px]">
-                  <button className="bg-white border-[2px] border-white text-main flex items-center justify-center gap-x-3 rounded-[20px] h-[60px] w-full md:max-w-[198px] hover:bg-main hover:text-action">
+                  <button className="bg-white border-[2px] border-white duration-300 transition-colors text-main flex items-center justify-center gap-x-3 rounded-[20px] h-[60px] w-full md:max-w-[198px] hover:bg-main hover:text-action">
                     <img src="img/svg/eyeAction.svg" alt="eye" />
                     <span className="font-[WorkSansSemiBold] font-semibold">
                       See NFT

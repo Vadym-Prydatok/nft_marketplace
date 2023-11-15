@@ -1,6 +1,38 @@
+import { useEffect } from "react";
 import { DiscoverCard } from "./DiscoverCard";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 export const Discover = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  useEffect(() => {
+    gsap.fromTo(
+      ".discover-list li",
+      {
+        opacity: 0,
+        y: 50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.5,
+        stagger: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".discover-list",
+          start: "top 80%",
+        },
+      },
+    );
+  }, []);
+
+  const buttonClick = () => {
+    gsap.fromTo('.seeAll-button img',{opacity: 0, rotateX: 0}, {opacity: 1, rotateX: 180, duration: 0.4});
+  }; 
+
+  
   return (
     <section className="py-10 md:py-20">
       <div className="container">
@@ -15,19 +47,19 @@ export const Discover = () => {
           </div>
 
           <div className="row-start-3 md:row-start-1 w-full grid md:place-items-end">
-            <a
-              href="#"
+            <button
+            onClick={buttonClick}
               className="font-[WorkSansSemiBold] gap-x-3 w-full h-[60px] rounded-[20px] border-action border-2 hover:bg-main
-              flex items-center justify-center bg-action font-semibold md:w-[187px]"
+              flex items-center justify-center bg-action font-semibold md:w-[187px] seeAll-button"
             >
-              <img src="img/svg/eye.svg" alt="rocket" />
+              <img src="img/svg/eye.svg" alt="eye" />
               See All
-            </a>
+            </button>
           </div>
 
           <div className="w-full row-start-2 md:col-start-1 md:col-end-3 rounded-[20px]">
-            <ul className="w-full grid justify-items-center gap-y-5 md:grid-cols-2 xl:grid-cols-3">
-              <li className="h-100% min-w-[330px] hover:shadow-md rounded-[20px] xl:justify-self-start">
+            <ul className="w-full grid justify-items-center gap-y-5 md:grid-cols-2 xl:grid-cols-3 discover-list">
+              <li className="h-100% min-w-[330px] hover:shadow-md duration-300 transition-shadow rounded-[20px] xl:justify-self-start">
                 <DiscoverCard
                   imgUrl="img/discover/galaxy.png"
                   avaUrl="img/discover/moonAvatar.png"
@@ -38,7 +70,7 @@ export const Discover = () => {
                 />
               </li>
 
-              <li className="h-100% min-w-[330px] hover:shadow-md rounded-[20px]">
+              <li className="h-100% min-w-[330px] hover:shadow-md duration-300 transition-shadow rounded-[20px]">
                 <DiscoverCard
                   imgUrl="img/discover/edena.png"
                   avaUrl="img/discover/nebulaAvatar.png"
@@ -49,7 +81,7 @@ export const Discover = () => {
                 />
               </li>
 
-              <li className="h-100% min-w-[330px] hover:shadow-md rounded-[20px] md:hidden xl:block xl:justify-self-end">
+              <li className="h-100% min-w-[330px] hover:shadow-md duration-300 transition-shadow rounded-[20px] md:hidden xl:block xl:justify-self-end">
                 <DiscoverCard
                   imgUrl="img/discover/astro.png"
                   avaUrl="img/discover/spaceAvatar.png"

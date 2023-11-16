@@ -76,29 +76,37 @@ export const Footer = () => {
                 <ul className="flex gap-x-3">
                   <li>
                     <a
+                      aria-label="go to discord"
                       className="duration-300 w-8 h-8 bg-[url(/img/svg/discord.svg)] bg-cover bg-no-repeat block hover:bg-[url(/img/svg/discordActive.svg)]"
-                      href="#"
+                      href="https://discord.com/"
+                      target="_blank"
                     ></a>
                   </li>
 
                   <li>
                     <a
+                      aria-label="go to youtube"
                       className="duration-300 w-8 h-8 bg-[url(/img/svg/youtube.svg)] bg-cover bg-no-repeat block hover:bg-[url(/img/svg/youtubeActive.svg)]"
-                      href="#"
+                      href="https://www.youtube.com/"
+                      target="_blank"
                     ></a>
                   </li>
 
                   <li>
                     <a
+                      aria-label="go to twitter"
                       className="duration-300 w-8 h-8 bg-[url(/img/svg/twitter.svg)] bg-cover bg-no-repeat block hover:bg-[url(/img/svg/twitterActive.svg)]"
-                      href="#"
+                      href="https://twitter.com/"
+                      target="_blank"
                     ></a>
                   </li>
 
                   <li>
                     <a
+                      aria-label="go to instagram"
                       className="duration-300 w-8 h-8 bg-[url(/img/svg/instagram.svg)] bg-cover bg-no-repeat block hover:bg-[url(/img/svg/instagramActive.svg)]"
-                      href="#"
+                      href="https://www.instagram.com/"
+                      target="_blank"
                     ></a>
                   </li>
                 </ul>
@@ -159,10 +167,7 @@ export const Footer = () => {
                   className="font-semibold fony-[WorkSansSemiBold] flex items-center justify-center bg-action 
               h-[46px] w-full rounded-[20px] gap-x-3 hover:bg-main duration-300 transition-shadow border-action border-2 md:absolute md:w-[200px] right-0 text-white submit-button-footer"
                 >
-                  <img
-                    src="img/svg/mail.svg"
-                    alt="mail"
-                  />
+                  <img src="img/svg/mail.svg" alt="mail" />
                   <span>Subscribe</span>
                 </button>
               </div>

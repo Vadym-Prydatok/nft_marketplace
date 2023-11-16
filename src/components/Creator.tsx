@@ -7,7 +7,7 @@ interface props {
 
 export const Creator: FC<props> = ({ creator }) => {
   return (
-    <a
+    <a href="##"
       className="relative flex items-center p-5 w-full gap-x-5 bg-secondary rounded-[20px] xl:flex-col xl:gap-y-[20px] group"
     >
       <span className="font-[SpaceMonoRegular] font-normal absolute left-3 top-[12px] p-[3px] text-center bg-main text-caption h-[30px] w-[30px] rounded-[50%] z-10 rate-span">

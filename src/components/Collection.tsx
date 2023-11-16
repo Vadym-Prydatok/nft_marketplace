@@ -8,43 +8,34 @@ import { ScrollTrigger } from "gsap/all";
 
 export const Collection = () => {
   const [card, setCard] = useState(0);
-  const [timer, setTimer] = useState(true);
+  const [timer, setTimer] = useState(false);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
   const [hasControlButton, setControlButton] = useState(false);
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    gsap.fromTo(
-      "#collection ul li",
-      {
-        opacity: 0,
-        y: -50,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        delay: 0.5,
-        stagger: 0.2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: "#collection",
-          start: "top 80%",
+    if (windowSize > 834) {
+      gsap.fromTo(
+        "#collection ul li",
+        {
+          opacity: 0,
+          y: -50,
         },
-      },
-    );
-
-    gsap.fromTo(
-      ".logo",
-      { opacity: 0, y: -50 },
-      { opacity: 1, y: 0, duration: 1, delay: 0.5, ease: "power2.out" },
-    );
-    gsap.fromTo(
-      ".menu-btn",
-      { opacity: 0, y: -50 },
-      { opacity: 1, y: 0, duration: 1, delay: 0.7, ease: "power2.out" },
-    );
-  }, []);
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.4,
+          stagger: 0.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: "#collection",
+            start: "top 80%",
+          },
+        },
+      );
+    }
+  }, [windowSize]);
 
 
   useEffect(() => {

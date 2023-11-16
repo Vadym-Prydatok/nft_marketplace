@@ -11,7 +11,7 @@ interface DiscoverCardProps {
 
 export const DiscoverCard:FC<DiscoverCardProps> = ({ imgUrl, avaUrl, title, userName, price, bid }) => {
   return (
-    <a className="group cursor-pointer">
+    <a href="##" className="group cursor-pointer">
       <div className='min-h-[238px] md:min-h-[296px] rounded-t-[20px] overflow-hidden'>
         <img className="object-cover group-hover:scale-105 duration-1000" src={imgUrl} alt="card" />
       </div>

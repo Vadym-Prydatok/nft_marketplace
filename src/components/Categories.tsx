@@ -26,7 +26,7 @@ export const Categories = () => {
         },
       },
     );
-  });
+  }, []);
 
   return (
     <section className="py-10 md:py-20 castomShadow">

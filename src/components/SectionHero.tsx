@@ -45,7 +45,8 @@ export const SectionHero = () => {
           rotateY: 90,
           opacity: 0,
           duration: 0.8,
-          ease: "power2.out",
+          ease: "slow(0.7,0.7,false)",
+          
           onComplete: () => {
             setVisibleCard(
               (prevVisibleCard) => (prevVisibleCard + 1) % headCards.length,
@@ -53,11 +54,11 @@ export const SectionHero = () => {
             gsap.fromTo(
               ".head-card-box",
               { rotateY: -90, opacity: 0 },
-              { rotateY: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
+              { rotateY: 0, opacity: 1, duration: 0.8, ease: "slow(0.7,0.7,false)" },
             );
           },
         });
-      }, 9000);
+      }, 6000);
 
       return () => clearInterval(interval);
     }
@@ -67,7 +68,8 @@ export const SectionHero = () => {
     gsap.to(".head-card-box", {
       opacity: 0,
       duration: 0.4,
-      ease: "power2.out",
+      ease: "slow(0.7,0.7,false)",
+    
       onComplete: () => {
         setVisibleCard(
           (prevVisibleCard) => (prevVisibleCard + 1) % headCards.length,
@@ -75,7 +77,7 @@ export const SectionHero = () => {
         gsap.to(".head-card-box", {
           opacity: 1,
           duration: 0.4,
-          ease: "power2.out",
+          ease: "slow(0.7,0.7,false)"
         });
       },
     });

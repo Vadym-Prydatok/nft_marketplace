@@ -2,16 +2,13 @@ import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { Menu } from "./Menu";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  gsap.registerPlugin(ScrollTrigger);
-
   useEffect(() => {
     gsap.fromTo(
-      "header ul li",
+      "header div ul li",
       {
         opacity: 0,
         y: -50,
@@ -20,21 +17,26 @@ export const Header = () => {
         opacity: 1,
         y: 0,
         duration: 1,
-        delay: 0.5,
+        delay: 0.8,
         stagger: 0.2,
         ease: "power2.out",
       },
     );
 
     gsap.fromTo(
-      ".logo",
-      { opacity: 0, y: -50 },
-      { opacity: 1, y: 0, duration: 1, delay: 0.5, ease: "power2.out" },
-    );
-    gsap.fromTo(
-      ".menu-btn",
-      { opacity: 0, y: -50 },
-      { opacity: 1, y: 0, duration: 1, delay: 0.7, ease: "power2.out" },
+      "header div",
+      {
+        opacity: 0,
+        y: -50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.2,
+        stagger: 0.2,
+        ease: "power2.out",
+      },
     );
   }, []);
 
@@ -42,36 +44,39 @@ export const Header = () => {
     <header>
       <Menu hasMenu={isMenuOpen} setMenu={setIsMenuOpen} />
       <div className="container">
-        <div className="h-[54px] flex items-center xl:h-[100px]">
-          <nav className="flex justify-between items-center w-full leading-6 font-[WorkSansSemiBold] font-semibold">
+        <div className="flex h-[54px] items-center xl:h-[100px]">
+          <nav className="flex w-full items-center justify-between font-[WorkSansSemiBold] font-semibold leading-6">
             <div className="logo">
               <a
                 href="#"
-                className="flex items-center gap-3 font-[SpaceMonoBold] font-bold hover:text-action text-[22px] duration-300 transition-colors"
+                className="flex items-center gap-3 font-[SpaceMonoBold] text-[22px] font-bold transition-colors duration-300 hover:text-action"
               >
                 <img src="img/svg/logo.svg" alt="logo" />
                 <span>NFT Marketplace</span>
               </a>
             </div>
 
-            <ul className="hidden xl:flex gap-[60px] items-center">
+            <ul className="hidden items-center gap-[60px] xl:flex">
               <li className="hover:text-action">
-                <a href="#collection" className="duration-300 transition-colors">
+                <a
+                  href="#collection"
+                  className="transition-colors duration-300"
+                >
                   Marketplace
                 </a>
               </li>
               <li className="hover:text-action">
-                <a href="#rankings" className="duration-300 transition-colors">
+                <a href="#rankings" className="transition-colors duration-300">
                   Rankings
                 </a>
               </li>
               <li className="hover:text-action">
-                <a href="#wallet" className="duration-300 transition-colors">
+                <a href="#wallet" className="transition-colors duration-300">
                   Connect a wallet
                 </a>
               </li>
               <li>
-                <button className="rounded-[20px] bg-action w-[152px] h-[60px] border-action border-2 hover:bg-main flex items-center justify-center gap-3 duration-300 ">
+                <button className="flex h-[60px] w-[152px] items-center justify-center gap-3 rounded-[20px] border-2 border-action bg-action duration-300 hover:bg-main ">
                   <img src="img/svg/user.svg" alt="user" />
                   Sign Up
                 </button>
@@ -80,7 +85,7 @@ export const Header = () => {
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={classNames("xl:hidden menu-btn", {
+              className={classNames("menu-btn xl:hidden", {
                 active: isMenuOpen,
               })}
             >

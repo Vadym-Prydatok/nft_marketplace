@@ -17,17 +17,17 @@ export const TopCreators = () => {
       {
         opacity: 1,
         y: 0,
-        duration: 1,
+        duration: 0.4,
         delay: 0.2,
         stagger: 0.2,
-        ease: "power2.out",
+        ease: "slow(0.7,0.7,false)",
         scrollTrigger: {
           trigger: ".creators-list",
           start: "top 80%",
         },
       },
     );
-  });
+  }, []);
 
   const handleClick = (id: number) => {
     gsap.fromTo(
@@ -41,7 +41,7 @@ export const TopCreators = () => {
     const tl = gsap.timeline({
       defaults: {
         duration: 1,
-        ease: "power2.out",
+        ease: "slow(0.7,0.7,false)",
       },
     });
 

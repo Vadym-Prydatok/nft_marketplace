@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/all";
 
 export const Collection = () => {
   const [card, setCard] = useState(0);
-  const [timer, setTimer] = useState(false);
+  const [timer, setTimer] = useState(true);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
   const [hasControlButton, setControlButton] = useState(false);
   gsap.registerPlugin(ScrollTrigger);
@@ -24,8 +24,8 @@ export const Collection = () => {
         {
           opacity: 1,
           y: 0,
-          duration: 1,
-          delay: 0.4,
+          duration: 0.4,
+          delay: 0.2,
           stagger: 0.2,
           ease: "power2.out",
           scrollTrigger: {
